@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import cv2
 from pyzbar import pyzbar
 import requests
@@ -17,7 +17,7 @@ def lookup_product(barcode_data):
         }
     return {"error": "Not found"}
 
-@app.route("/scan")
+@app.route("/scan-py", methods=["GET"])
 def scan_barcode():
     cap = cv2.VideoCapture(0)
     if not cap.isOpened():
@@ -36,6 +36,10 @@ def scan_barcode():
             cap.release()
             cv2.destroyAllWindows()
             return jsonify(lookup_product(barcode_data))
+
+@app.route("/lookup/<barcode>")
+def lookup(barcode):
+    return jsonify(lookup_product(barcode))
 
 if __name__ == "__main__":
     app.run(debug=True)
