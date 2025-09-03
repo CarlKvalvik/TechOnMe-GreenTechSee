@@ -1,11 +1,33 @@
-
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    padding-bottom: 60px; /* space for mobile nav */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding-bottom: 60px; /* prevent navbar overlap */
 }
 
-/* Bottom Mobile Navbar */
+h1, h2 {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+video {
+  display: block;
+  margin: 1rem auto;
+  border: 1px solid black;
+}
+
+/* Scan button */
+.scan-btn {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  background: #29b655;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Sticky Mobile Navbar */
 .mobile-nav {
     display: none;
     background: #29b655;
@@ -23,18 +45,17 @@ body {
     align-items: center;
 }
 
-.mobile-nav .bloc-icon svg {
+.mobile-nav svg {
     width: 30px;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .mobile-nav {
     display: flex;
     }
 }
 
-/* Modal */
+/* Modal styling */
 .modal {
     display: none;
     position: fixed;
@@ -46,6 +67,7 @@ body {
     z-index: 2000;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
 .modal-content {
     background: #fff;
     padding: 2rem;
@@ -60,7 +82,7 @@ input {
     width: 90%;
 }
 
-#closeModal {
+.close-btn {
     padding: 0.5rem 1rem;
     background: #222;
     color: #fff;
@@ -70,7 +92,24 @@ input {
     width: 100%;
 }
 
-/* Success Modal */
+.submit-btn {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #29b655; /* green color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.error-msg {
+  color: red;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+/* Success modal */
 .success-modal {
   display: none;
   position: fixed;
@@ -89,21 +128,4 @@ input {
   font-size: 1.2rem;
   font-weight: bold;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-
-.error-msg {
-    color: red;
-    margin-top: 0.5rem;
-    font-weight: bold;
-}
-
-.login-btn {
-  margin-top: 0.5rem;
-  padding: 0.5rem 1rem;
-  background: #29b655;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
 }
