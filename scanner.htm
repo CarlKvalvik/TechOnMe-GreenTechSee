@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Barcode Scanner</title>
+</head>
+<body>
+    <h1>Barcode Scanner</h1>
+    <button onclick="scan()">Scan Barcode</button>
+    <p id="result"></p>
+
+    <script>
+        async function scan() {
+            const res = await fetch("http://127.0.0.1:5000/scan");
+            const data = await res.json();
+            document.getElementById("result").innerText = 
+                `Produkt: ${data.name} | Holdbarhet: ${data.expiration_date}`;
+        }
+    </script>
+</body>
+</html>
