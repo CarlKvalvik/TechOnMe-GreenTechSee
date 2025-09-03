@@ -17,6 +17,11 @@ SeeForMe gjør produktmerking **tilgjengelig, forståelig og brukbar for alle** 
 - 🎙️ **Speech-to-Text (STT)** – brukeren kan snakke til appen (“Scan dato”, “Scan klær”, “Les opp”).  
 - 📒 **Logg & påminnelser** – husker skannede produkter og varsler når mat nærmer seg utløpsdato.  
 
+- **MAT** - Bruke API for å innhente info fra strekkode/Qrkode. Lagre aktuelle varen i en Logg som varsler når. Tilleggsfunksjon: Kan legge inn hvilke allergier du har - Når du scanner varen får du svar, Enten Rød eller Grønn.
+
+- **KLÆR** - Leser ved hjelp av kamera og AI og innhenter informasjon om vaskesymbol. I logg kan du lagre plagget som du allerede har scannet, og kameraet ser hvilket program det skal vaskes på (du trenger ikke å scanne denne lappen på nytt.)
+
+
 ---
 
 ## 🌍 Hvorfor
@@ -28,8 +33,8 @@ SeeForMe gjør produktmerking **tilgjengelig, forståelig og brukbar for alle** 
 
 ## 🛠️ Teknologi
 - **Frontend:** HTML, CSS, JavaScript  
-- **OCR:** [Tesseract.js](https://github.com/naptha/tesseract.js)  
-- **TTS & STT:** Web Speech API (innebygd i moderne nettlesere)  
+- **OCR:** [Tesseract.js](https://github.com/naptha/tesseract.js)
+- **TTS & STT:** Web Speech API (innebygd i moderne nettlesere)
 - **Demo av AI-modell:** Google Teachable Machine (for vaskesymboler)  
 
 ---
