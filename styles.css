@@ -33,7 +33,7 @@ p {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: #F1F1F1;
+    background-color: #29b655;
     color: #222;
     position: sticky;
     top: 0;
@@ -58,7 +58,7 @@ p {
 /* Bottom Mobile Navbar */
 .mobile-nav {
     display: none;
-    background: #F1F1F1;
+    background: #29b655;
     position: fixed;
     bottom: 0;
     height: 65px;
@@ -118,13 +118,13 @@ input {
 }
 
 #closeModal {
-    margin-top: 1rem;
     padding: 0.5rem 1rem;
     background: #222;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 100%;
 }
 
 /* Success Modal */
@@ -152,4 +152,15 @@ input {
     color: red;
     margin-top: 0.5rem;
     font-weight: bold;
+}
+
+.login-btn {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #29b655; /* green color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
 }
