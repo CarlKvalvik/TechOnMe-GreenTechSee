@@ -1,0 +1,109 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding-bottom: 60px; /* space for mobile nav */
+}
+
+/* Bottom Mobile Navbar */
+.mobile-nav {
+    display: none;
+    background: #29b655;
+    position: fixed;
+    bottom: 0;
+    height: 65px;
+    width: 100%;
+    justify-content: space-around;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.mobile-nav .bloc-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-nav .bloc-icon svg {
+    width: 30px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mobile-nav {
+    display: flex;
+    }
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* semi-transparent background */
+    backdrop-filter: blur(2px);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.modal-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 400px;
+}
+
+input {
+    display: block;
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    width: 90%;
+}
+
+#closeModal {
+    padding: 0.5rem 1rem;
+    background: #222;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Success Modal */
+.success-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 2100;
+}
+
+.success-box {
+  background: #28a745;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.error-msg {
+    color: red;
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+.login-btn {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #29b655;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
