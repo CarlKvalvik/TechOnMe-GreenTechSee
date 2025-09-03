@@ -3,20 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>See On Me</title>
+    <title>See For Me</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav class="top-nav">
-        <div class="logo">See For Me</div>
+        <img class="logo" src="img/logowobg.png"/>
         <div class="nav-links">
             <a href="#">Home</a>
             <a href="#">About</a>
             <a href="#">Info</a>
-            <a href="#">Scan</a>
+            <button class="login-btn" id="loginBtn">Login</button>
         </div>
     </nav>
-    <div class="container">
+    <!-- Section 1 -->
+    <div class="section" id="section1">
+        <h2>Velkommen</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at sapien eget nulla dictum interdum.</p>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section" id="section2">
+        <h2>Om oss</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non velit vitae urna fermentum auctor.</p>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="section" id="section3">
+        <h2>Tjenester</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Mauris tristique, sapien at imperdiet.</p>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="section" id="section4">
+        <h2>Kontakt oss</h2>
+        <p>Tlf: (+47) 908 56 213<br>Epost: seeforme@techonme.no</p>
+        <img class="welcomelogo" src="img/logowobg.png"/>
     </div>
     <nav class="mobile-nav">
         <a href="#" class="bloc-icon">
@@ -28,6 +50,71 @@
         <a href="#" class="bloc-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M104 112C90.7 112 80 122.7 80 136L80 184C80 197.3 90.7 208 104 208L152 208C165.3 208 176 197.3 176 184L176 136C176 122.7 165.3 112 152 112L104 112zM256 128C238.3 128 224 142.3 224 160C224 177.7 238.3 192 256 192L544 192C561.7 192 576 177.7 576 160C576 142.3 561.7 128 544 128L256 128zM256 288C238.3 288 224 302.3 224 320C224 337.7 238.3 352 256 352L544 352C561.7 352 576 337.7 576 320C576 302.3 561.7 288 544 288L256 288zM256 448C238.3 448 224 462.3 224 480C224 497.7 238.3 512 256 512L544 512C561.7 512 576 497.7 576 480C576 462.3 561.7 448 544 448L256 448zM80 296L80 344C80 357.3 90.7 368 104 368L152 368C165.3 368 176 357.3 176 344L176 296C176 282.7 165.3 272 152 272L104 272C90.7 272 80 282.7 80 296zM104 432C90.7 432 80 442.7 80 456L80 504C80 517.3 90.7 528 104 528L152 528C165.3 528 176 517.3 176 504L176 456C176 442.7 165.3 432 152 432L104 432z"/></svg>
         </a>
+        <a href="#" class="bloc-icon" id="loginBtnMobile">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M240 192C240 147.8 275.8 112 320 112C364.2 112 400 147.8 400 192C400 236.2 364.2 272 320 272C275.8 272 240 236.2 240 192zM448 192C448 121.3 390.7 64 320 64C249.3 64 192 121.3 192 192C192 262.7 249.3 320 320 320C390.7 320 448 262.7 448 192zM144 544C144 473.3 201.3 416 272 416L368 416C438.7 416 496 473.3 496 544L496 552C496 565.3 506.7 576 520 576C533.3 576 544 565.3 544 552L544 544C544 446.8 465.2 368 368 368L272 368C174.8 368 96 446.8 96 544L96 552C96 565.3 106.7 576 120 576C133.3 576 144 565.3 144 552L144 544z"/></svg>
+        </a>
     </nav>
+
+    <!-- Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit" class="login-btn">Submit</button>
+            <div class="error-msg" id="errorMsg"></div>
+            </form>
+            <button id="closeModal">Close</button>
+        </div>
+    </div>
+
+    <div class="success-modal" id="successModal">
+        <div class="success-box">
+            ✅ Login Successful!
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const loginBtn = document.getElementById('loginBtn');
+            const loginBtnMobile = document.getElementById('loginBtnMobile');
+            const modal = document.getElementById('loginModal');
+            const closeModal = document.getElementById('closeModal');
+            const loginForm = document.getElementById('loginForm');
+            const successModal = document.getElementById('successModal');
+            const errorMsg = document.getElementById('errorMsg');
+
+            loginBtn.addEventListener('click', () => {
+                modal.style.display = 'flex';
+            });
+            loginBtnMobile.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.style.display = 'flex';
+            });
+            closeModal.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+            window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+            });
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault(); // prevent page reload
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+
+                if(username === "TechOnMe" && password === "123") {
+                    modal.style.display = 'none'; // close modal
+                    errorMsg.textContent = ''; // clear error if any
+                    successModal.style.display = 'flex'; // show success
+
+                setTimeout(() => successModal.style.display = 'none', 1000); // hide after 2s
+                } else {
+                    errorMsg.textContent = "Invalid username or password!";
+                }
+            });
+        });
+    </script>
 </body>
 </html>

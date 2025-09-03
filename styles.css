@@ -5,22 +5,43 @@ body {
     padding-bottom: 60px; /* space for mobile nav */
 }
 
+.section {
+    background: #fff;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.welcomelogo {
+    width: 10em;
+}
+
+h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+p {
+    color: #555;
+    line-height: 1.5;
+}
+
 /* Top Desktop Navbar */
 .top-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: #222;
-    color: #fff;
+    background-color: #F1F1F1;
+    color: #222;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 .top-nav .logo {
-    font-size: 1.2rem;
-    font-weight: bold;
+    height: 3em;
 }
 
 .top-nav .nav-links {
@@ -30,7 +51,7 @@ body {
 
 .top-nav .nav-links a {
     text-decoration: none;
-    color: #fff;
+    color: #222;
     transition: color 0.2s;
 }
 
@@ -43,6 +64,7 @@ body {
     height: 65px;
     width: 100%;
     justify-content: space-around;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .mobile-nav .bloc-icon {
@@ -63,4 +85,71 @@ body {
     .mobile-nav {
     display: flex;
     }
+    .section {
+    margin: 2rem auto;
+    max-width: 600px;
+    }
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* semi-transparent background */
+    backdrop-filter: blur(2px);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.modal-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 400px;
+}
+
+input {
+    display: block;
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    width: 90%;
+}
+
+#closeModal {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #222;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Success Modal */
+.success-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 2100;
+}
+
+.success-box {
+  background: #28a745;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.error-msg {
+    color: red;
+    margin-top: 0.5rem;
+    font-weight: bold;
 }
